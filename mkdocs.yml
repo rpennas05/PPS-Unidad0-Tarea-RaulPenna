@@ -16,7 +16,7 @@ nav:
   - AccionesGit: gitActions.md
   - ServidorWeb: docker.md
   - Resume: conclusiones.md
-  -
+
 # Se pueden añadir subsecciones anidando listas:
   # - Referencia: 
   #   - Funciones: referencia/funciones.md
