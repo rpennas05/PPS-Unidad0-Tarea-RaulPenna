@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: PPSUnidad0-Tarea-Raul
+    ports:
+      - "8085:80"
+    volumes:
+      - ../gh-pages:/usr/share/nginx/html
+    restart: unless-stopped
