@@ -13,7 +13,9 @@ Este contenedor que vamos a crear debe tener las siguientes características:
 - Debemos redirigir el puerto que muestra la web nginx al puerto 8085 de nuestra máquina.
 - Usaremos un `bind-mount` para unir la carpeta de nuestro repositorio.
 
-Una vez tenemos esto claro debemos elegir un método para crear el contenedor, en mi caso voy a levantarlo con un docker-compose.yml, el cual tiene la siguiente estructura:![contenedor nginx](./img/creacion-contenedor-docker.png)
+Una vez tenemos esto claro debemos elegir un método para crear el contenedor, en mi caso voy a levantarlo con un docker-compose.yml, el cual tiene la siguiente estructura:
+
+![contenedor nginx](./img/creacion-contenedor-docker.png)
 
 En este docker composo se muestra lo primero la version, la cual hemos definido como la 3.9 y después debemos definir los servicios del contenedor:
 
