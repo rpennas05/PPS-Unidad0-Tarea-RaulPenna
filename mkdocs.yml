@@ -12,10 +12,10 @@ site_name: Documentación de Tarea Obligatorio Unidad0 Raúl Peña # Define el t
 nav:
   # El nombre de la sección en el menú: nombre_archivo.md
   - Home: index.md             # Primer elemento del menú, enlaza con el archivo 'index.md'.
-  - CrearRepositorio: git.md
-  - AccionesGit: gitActions.md
-  - ServidorWeb: docker.md
-  - Resume: conclusiones.md
+  - Git: git.md
+  - GitActions: gitActions.md
+  - Docker: docker.md
+  - Conclusiones: conclusiones.md
 
 # Se pueden añadir subsecciones anidando listas:
   # - Referencia: 
