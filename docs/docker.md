@@ -25,11 +25,21 @@ En este docker composo se muestra lo primero la version, la cual hemos definido 
 1. Definimos el volumen del contenedor. En este caso será un `bind-mount` que unirá la carpeta gh-pages del repositorio git con el directorio donde nginx guarda los archivos de la web.
 1. Por último hemos especificado la opción para que se reinicie cuando se produzca un error.
 
+**IMPORTANTE**: hay que tener en cuenta que puede que no exista el directorio ../gh-pages o este vacío para ello debemos situarnos en la rama `gh-pages` y crear el directorio además de copiar los archivos de la rama en este directorio
+con los siguientes comandos:
+```
+mkdir -p ../gh-pages
+sudo cp -R * ../gh-pages
+```
+
+Con estos comandos abremos copiado la web estática en la carpeta hemos especificado el bind-mount de nuestro contenedor de docker.
+
 ## Muestra del contenedor
 
 Una vez tengamos nuestro docker-compose.yml creado, en mi caso esta en la rama main de mi repositorio de git, nos dirigiremos a dicha rama y ejecutamos el comando `docker compose up -d` para levantar el contenedor como demonio.
 
-No he podido levantar el contenedor debido a un error bastante peculiar de mi máquina anfitriona por le cual no me permite bajarme las imágenes de dockerhub. EL tiempo de espera es muy largo y al cabo de un tiempo me rechaza la conexión.
+Con el contenedor en ejecución podemos acceder a la dirección 127.0.0.1:8085 donde hemos redirigido la página nginx en nuestra máquina local y se nos mostrará la página de github.io:![página nginx](./img/acceso-web-nginx.png)
 
-En caso de que nos permita levantar el contenedor este se desplegaría en modo demonio, y estaría corriendo hasta que ejecutasemos el comando `docker compose down`. Mientras el contenedor estuviese en ejecución nos permitiría ver la
-web estática de nuestro repositorio de git accediendo en nuestro navegador a la dirección localhost:8085. Además también podríamos ver el estado del contenedor con `docker inspect`.
+Y ya tendríamos el contenedor creado y en ejecución, podemos ver el estado de este gracias al comando `docker inspect`, como se muestra en la siguiente imagen:![docker inspect](./img/docker-inspect.png)
+
+Para parar el contenedor simplemente tenemos que ejecutar el comando `docker compose down`.
